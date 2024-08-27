@@ -1,8 +1,6 @@
-import Character from './character';
-import Bowman from './bowman';
-import Swordsman from './swordsman';
-import Magician from './magician';
-import Undead from './undead';
-import Daemon from './daemon';
+// TODO: write your code here
+import sum from './basic';
 
+console.log('worked');
 
+console.log(sum([1, 2]));

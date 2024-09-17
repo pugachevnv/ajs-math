@@ -5,3 +5,4 @@ test('should sum', () => {
 
   expect(result).toBe(6);
 });
+

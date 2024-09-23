@@ -1,31 +1,20 @@
 // TODO: write your code here
-import sum from './basic';
 
-
-console.log('worked');
-
-console.log(sum([1, 2]));
-
-import Character from './character';
-import Bowman from './bowman';
 import Magician from './magician';
-import Swordsman from './swordsman';
-import Team from './team';
+import Daemon from './daemon';
 
-const user1 = new Character('frick','Undead');
-const user2 = new Bowman('moroz');
-const user3 = new Magician('kakashka');
-const user4 = new Swordsman('psihichka');
+const magician = new Magician('gendalf');
+magician.attack = 100;
+magician.distance = 2;
+console.log(magician.getAttack());
 
-console.log(user1);
-console.log(user2);
-console.log(user3);
-console.log(user4);
+magician.stoned = true;
+console.log(magician.getAttack()); 
 
-const team = new Team();
-team.add(user1);
-team.addAll(user1, user2, user3, user4);
-console.log(team);
-console.log(team.toArray());
-console.log(team.add(user1));
+const daemon = new Daemon('sauron');
+daemon.attack = 100;
+daemon.distance = 5;
+console.log(daemon.getAttack());
 
+daemon.stoned = true;
+console.log(daemon.getAttack()); 

@@ -1,14 +1,16 @@
 import Daemon from "../daemon";
 
-test('Правильно создается объект', () => {
+test('Правильно расчитывается атака без эффекта дурмана', () => {
     const daemon = new Daemon('Alex');
-    const correct = {   
-        attack: 10,
-        defence: 40,
-        health: 100,
-        level: 1,
-        name: 'Alex',
-        type: 'Daemon'
-    };
-    expect(daemon).toEqual(correct);
+    daemon.attack = 100;
+    daemon.distance = 2
+    expect(daemon.getAttack()).toBe(90);
+})
+
+test('Правильно расчитывается атака c эффектом дурмана', () => {
+    const daemon = new Daemon('Alex');
+    daemon.attack = 100;
+    daemon.distance = 2
+    daemon._stoned = true;
+    expect(daemon.getAttack()).toBe(85);
 })

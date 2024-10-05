@@ -4,7 +4,7 @@ test('Правильно расчитывается атака без эффек
     const magician = new Magician('Alex');
     magician.attack = 100;
     magician.distance = 5
-    expect(magician.getAttack()).toBe(60);
+    expect(magician.attack).toBe(60);
 })
 
 test('Правильно расчитывается атака c эффектом дурмана', () => {
@@ -12,5 +12,5 @@ test('Правильно расчитывается атака c эффекто�
     magician.attack = 100;
     magician.distance = 5;
     magician._stoned = true;
-    expect(magician.getAttack()).toBe(48);
+    expect(magician.attack).toBe(48);
 })

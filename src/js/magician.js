@@ -1,4 +1,5 @@
 import Character from "./character";
+import AttackHandler from "./attackHandler";
 
 export default class Magician extends Character {
     constructor(name) {
@@ -16,12 +17,12 @@ export default class Magician extends Character {
         this._stoned = value;
     }
 
-    getAttack() {
-        let result = this.attack * (1 - (this.distance - 1) * 0.1);
-        if (this._stoned) {
-            result -= Math.log2(this.distance) * 5;
-        }
-        return  result > 0 ? Math.round(result) : 0;
+    get attack() {
+        return  AttackHandler.calculateAttack(this._attack, this.distance, this._stoned);
+    }
+
+    set attack(damage) {
+        this._attack = damage;
     }
 
 }

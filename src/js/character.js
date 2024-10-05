@@ -49,4 +49,5 @@ export default class Character {
             throw new Error ('Нельзя нанести урон умершему');
         }
     }
+
 }
